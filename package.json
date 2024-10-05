@@ -1,0 +1,45 @@
+{
+  "name": "household-accounts-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron": "wait-on tcp:3000 && cross-env ELECTRON=true electron .",
+    "electron:dev": "concurrently -k \"cross-env ELECTRON=true vite\" \"npm run electron\"",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "electron-store": "^8.1.0",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-datepicker": "^4.25.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.64",
+    "@types/react-datepicker": "^4.19.6",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5",
+    "wait-on": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
